@@ -4,7 +4,7 @@ const input = document.querySelector("#controls input");
 const boxesContainer = document.querySelector("#boxes");
 
 createButton.addEventListener("click", handleCreate);
-destroyButton.addEventListener("click", handleDestroyer);
+destroyButton.addEventListener("click", handleDestroy);
 
 function handleCreate() {
   boxesContainer.innerHTML = "";
@@ -14,10 +14,11 @@ function handleCreate() {
     input.value = "";
   }
 }
-function handleDestroyer() {
+
+function handleDestroy() {
   boxesContainer.innerHTML = "";
-  createBoxes(amount);
 }
+
 function createBoxes(amount) {
   let boxSize = 30;
   const fragment = document.createDocumentFragment();
@@ -30,6 +31,7 @@ function createBoxes(amount) {
     fragment.appendChild(box);
     boxSize += 10;
   }
+
   boxesContainer.appendChild(fragment);
 }
 
